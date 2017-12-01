@@ -1,0 +1,22 @@
+#include <stdio.h>
+ /***********************************************************
+|Author:Carl Randyl Tuquero
+|                       Exercice 2
+***********************************************************/
+int main () {
+    //I used P for Pomme and O for Orange
+    //Assuming these are the list of item
+   char item[]={'P','O','P','P'};
+   int i,j;
+   float price =0;
+   j = sizeof(item);
+  
+  for(i=0;i < j; i++){
+    if(item[i]== 'P') price = price + 0.60;
+    else if(item[i]== 'O') price = price + 1.25;
+  }
+    
+           
+    printf("The price: %.3f$", price);
+    return 0;
+}

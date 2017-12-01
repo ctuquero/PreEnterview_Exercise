@@ -1,0 +1,37 @@
+#include <stdio.h>
+ /***********************************************************
+|Author:Carl Randyl Tuquero
+|                       Exercice 2 Part 2
+***********************************************************/
+int main () {
+   char item[]={'P','O','P','O','O'};
+   int i,j;
+   float price =0;
+   int counterPomme = 0;
+   int counterOrange = 0;
+   j = sizeof(item);
+  
+  for(i=0;i < j; i++){
+    if(item[i]== 'P'){ 
+        price = price + 0.60;
+        counterPomme++;
+        //If the counterPomme is 2 we decrease the price of one Pomme
+        if (counterPomme == 2){
+            price = price - 0.60;
+            counterPomme = 0;
+            }
+    }
+    else if(item[i]== 'O'){
+        price = price + 1.25;
+        counterOrange++;
+        //If the counterOrange is 3 we decrease the price of one Orange
+        if (counterOrange == 3){
+            price = price - 1.25;
+            counterOrange = 0;
+            }
+    } 
+  }
+    
+    printf("The price is: %.3f$", price);
+    return 0;
+}

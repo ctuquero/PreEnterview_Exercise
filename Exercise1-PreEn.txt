@@ -1,0 +1,43 @@
+#include <stdio.h>
+/***********************************************************
+|Author:Carl Randyl Tuquero
+|                       Exercice 1
+***********************************************************/
+ 
+int main () {
+
+   char number[]= "1234"; 
+   //scanf("Please enter at least 2 digit number %s", &number);
+   int i,j;
+   char higherdigit;
+   char lowerdigit;
+   
+  i = sizeof(number)-2;
+  j = sizeof(number)-3;
+  
+    while(1){
+            //When the digit stored in number[i] is greater than number[j], it will swap //the 2 digits 
+            if(number[i] > number[j]){
+                higherdigit = number[i];
+                lowerdigit = number[j];
+  
+                number[i] = lowerdigit;
+                number[j] = higherdigit;
+                
+                break;
+            }
+            //If the digit stored in number[i] is less than number[j],
+            //it will decrease j so that it can move on to compare number[i]
+            //to the next digit.
+            else if(number[i] <= number[j])j--;
+            //if the digit in number[i] is not greater than any of the digit,
+            //it will increament i to check if the next digit is higher than any of the //digit
+            else{ 
+                i--;
+                j = i-1;
+        }
+    }
+    
+    printf("The next highest number is: %s", number);
+    return 0;
+}
